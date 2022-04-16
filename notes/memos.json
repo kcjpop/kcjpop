@@ -1,5 +1,5 @@
 {
-  entries: [
-    { name: "#til `HTMLFormElement.elements`", path: "html-form-elements.md" }
+  "entries": [
+    { "name": "#til `HTMLFormElement.elements`", "path": "html-form-elements.md" }
   ]
 }
