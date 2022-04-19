@@ -20,9 +20,13 @@ $$; ❺
 ```
 
 ❶ Here we define a function named `my_func` without any argument
+
 ❷ Then we tell the type of return value
+
 ❸ The language we're using in function body
+
 ❹ $$ is [_dollar-quoting_](https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-DOLLAR-QUOTING) where we don't have to escape single- and double-quotes. It's used quite often when writing functions.
+
 ❺ Don't forget to have semicolon at the end.
 
 To use:
@@ -36,10 +40,85 @@ postgres@db:postgres> select my_func();
 +---------+
 ```
 
-A function can return multiple rows by defining `SETOF sometype` or `TABLE (column_definitions)`.
+We can specify `returns void` in ❷ if we don't want to return any value. Maybe useful for `insert`, `update`, or `delete`. Don't forget that we can use `returning` for those statements too.
 
-> **Functions vs procedures**
->
-> - Procedures are similar to functions. They are known as _routines_ and can be modify with `alter routine` and `drop routine`. There is no such thing as `create > routine`.
-> - Procedures don't have `returns` clause when `create procedure`, but they can return data via _output parameters_.
-> - To use a procedure, we use `call procedure_name`.
+```sql
+create or replace function my_func()
+returns uuid -- assume that my_table.id has type UUID
+language sql
+as $$
+  insert into my_table() values(1, 'foo', now()) returning id;
+$$;
+```
+
+A function can return multiple rows having only ONE column by defining `setof sometype`.
+
+```sql
+create or replace function my_func()
+returns setof int
+language sql
+as $$
+  select * from generate_series(1, 10) as i;
+$$;
+```
+
+And for multiple rows of multiple columns, we `returns table (column_definitions)`.
+
+```sql
+drop function my_func()
+create or replace function my_func()
+returns table(
+  i int,
+  ts timestamp
+)
+language sql
+as $$
+  select i, now() from generate_series(1, 10) as i;
+$$;
+```
+
+As we return a table, to use:
+
+```sql
+postgres@db:postgres> select * from my_func();
++----+---------------------------+
+| i  | ts                        |
+|----+---------------------------|
+| 1  | 2022-04-19 13:21:36.07908 |
+| 2  | 2022-04-19 13:21:36.07908 |
+| 3  | 2022-04-19 13:21:36.07908 |
+| 4  | 2022-04-19 13:21:36.07908 |
+| 5  | 2022-04-19 13:21:36.07908 |
+| 6  | 2022-04-19 13:21:36.07908 |
+| 7  | 2022-04-19 13:21:36.07908 |
+| 8  | 2022-04-19 13:21:36.07908 |
+| 9  | 2022-04-19 13:21:36.07908 |
+| 10 | 2022-04-19 13:21:36.07908 |
++----+---------------------------+
+```
+
+Otherwise, they are tuples 🙈.
+
+```sql
+postgres@db:postgres> select my_func();
++-----------------------------------+
+| my_func                           |
+|-----------------------------------|
+| (1,"2022-04-19 13:22:51.902983")  |
+| (2,"2022-04-19 13:22:51.902983")  |
+| (3,"2022-04-19 13:22:51.902983")  |
+| (4,"2022-04-19 13:22:51.902983")  |
+| (5,"2022-04-19 13:22:51.902983")  |
+| (6,"2022-04-19 13:22:51.902983")  |
+| (7,"2022-04-19 13:22:51.902983")  |
+| (8,"2022-04-19 13:22:51.902983")  |
+| (9,"2022-04-19 13:22:51.902983")  |
+| (10,"2022-04-19 13:22:51.902983") |
++-----------------------------------+
+```
+
+#### P.S: Functions vs procedures
+
+- Procedures are similar to functions. They are known as _routines_ and can be modify with `alter routine` and `drop routine`. There is no such thing as `create routine`.
+- Procedures don't have `returns` clause when `create procedure`, but they can return data via _output parameters_.
+- To use a procedure, we use `call procedure_name`.
