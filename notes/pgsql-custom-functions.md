@@ -1,4 +1,8 @@
-Obviously we can define custom functions in PgSQL. There are 2 (actually many) languages we can use to write functions:
+# Writing custom functions in PostgreSQL: A beginner guide
+
+\*quite useful when working with [Supabase](https://supabase.com/)
+
+There are 2 (actually many) languages we can use to write functions:
 
 1. Using SQL `language sql`: Maybe the fastest one to get started
 2. Using a [procedural language](https://www.postgresql.org/docs/14/xplang.html) such as PL/pgSQL or PL/Python or [PLV8](https://plv8.github.io/) (yep JavaScript runs everywhere).
@@ -19,13 +23,13 @@ as $$ ❹
 $$; ❺
 ```
 
-❶ Here we define a function named `my_func` without any argument
+❶ Here we define a function named `my_func` without any argument.
 
-❷ Then we tell the type of return value
+❷ Then we tell the type of return value.
 
 ❸ The language we're using in function body
 
-❹ $$ is [_dollar-quoting_](https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-DOLLAR-QUOTING) where we don't have to escape single- and double-quotes. It's used quite often when writing functions.
+❹ $$ is [_dollar-quoting_](https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-DOLLAR-QUOTING) where we don't have to escape single- and double-quotes.
 
 ❺ Don't forget to have semicolon at the end.
 
@@ -40,18 +44,18 @@ postgres@db:postgres> select my_func();
 +---------+
 ```
 
-We can specify `returns void` in ❷ if we don't want to return any value. Maybe useful for `insert`, `update`, or `delete`. Don't forget that we can use `returning` for those statements too.
+We can specify `returns void` in ❷ if we don't want to return any value. And for `insert`, `update`, or `delete`, we can use `returning`.
 
 ```sql
 create or replace function my_func()
 returns uuid -- assume that my_table.id has type UUID
 language sql
 as $$
-  insert into my_table() values(1, 'foo', now()) returning id;
+  insert into my_table values(1, 'foo', now()) returning id;
 $$;
 ```
 
-A function can return multiple rows having only ONE column by defining `setof sometype`.
+A function can return multiple rows that have _ONE_ column of the same type by defining `setof sometype`.
 
 ```sql
 create or replace function my_func()
@@ -97,7 +101,7 @@ postgres@db:postgres> select * from my_func();
 +----+---------------------------+
 ```
 
-Otherwise, they are tuples 🙈.
+Otherwise, they look like this 🙈.
 
 ```sql
 postgres@db:postgres> select my_func();
