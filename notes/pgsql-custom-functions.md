@@ -62,7 +62,7 @@ as $$
 $$;
 ```
 
-And for multiple rows of multiple columns, we `returns table (column_definitions)`.
+And for multiple rows of multiple columns, we `returns table (column-definitions)`.
 
 ```sql
 drop function my_func()
@@ -116,6 +116,8 @@ postgres@db:postgres> select my_func();
 | (10,"2022-04-19 13:22:51.902983") |
 +-----------------------------------+
 ```
+
+`returns table` is a part of recent SQL standard, and they clearly contain `setof`, so _in my opinion_ it should be preferred.
 
 #### P.S: Functions vs procedures
 
