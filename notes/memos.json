@@ -1,5 +1,6 @@
 {
   "entries": [
-    { "name": "#til `HTMLFormElement.elements`", "path": "html-form-elements.md" }
+    { "name": "#til `HTMLFormElement.elements`", "path": "html-form-elements.md" },
+    { "name": "Writing custom function in PosgreSQL: A beginner guide", "path": "pgsql-custom-functions.md" }
   ]
 }
