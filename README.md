@@ -1,4 +1,6 @@
 ### Hi there 👋
 
-- 📝 https://notes.ancaois.me/ - My random notes [Powered by https://memos.pub/]
-- 👨‍💻 https://ancaois.me/ - My outdated personal website
+- 👨‍💻 JavaScript, React, a bit of this and a bit of that
+- 🌏 https://ancaois.me - My random notes on random things
+
+**This website is powered by https://memos.pub/**
