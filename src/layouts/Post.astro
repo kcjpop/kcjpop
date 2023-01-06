@@ -1,0 +1,23 @@
+---
+import Base from './Base.astro'
+---
+
+<Base>
+  <style>
+    main {
+      max-width: var(--size-content-3);
+      display: grid;
+      gap: var(--size-3);
+    }
+  </style>
+
+  <style is:global>
+    pre.astro-code {
+      max-inline-size: 100%;
+      padding: var(--size-2);
+    }
+  </style>
+  <main>
+    <slot />
+  </main>
+</Base>

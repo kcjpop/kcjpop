@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/Post.astro
+---
+
 ## Hello Zig
 
 ```zig

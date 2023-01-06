@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/Post.astro
+---
+
 # Writing custom functions in PostgreSQL: A beginner guide
 
 \*quite useful when working with [Supabase](https://supabase.com/)

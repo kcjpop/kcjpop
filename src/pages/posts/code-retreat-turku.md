@@ -1,7 +1,7 @@
 ---
+layout: ../../layouts/Post.astro
 title: Code Retreat in Turku — A Nice Experience
 date: 2018-11-17
-layout: post.njk
 ---
 
 Having a really bad week, I went to Turku for my first [Code Retreat](https://www.coderetreat.org/) without any expectation, yet returned home with a smile from ear to ear.

@@ -1,19 +1,23 @@
+---
+layout: ../../layouts/Post.astro
+---
+
 ## #TIL `HTMLFormElement.elements`
 
 Thật ra là _biết_ cũng mấy bữa rồi mà giờ mới ghi lại. Đại loại khi làm form _"đơn giản"_ trong React thì chúng ta hay viết như thế này.
 
 ```js
 const PLANS = [
-  { value: "30-days", label: "30 days" },
-  { value: "90-days", label: "90 days" },
-  { value: "lifetime", label: "Lifetime" },
-];
+  { value: '30-days', label: '30 days' },
+  { value: '90-days', label: '90 days' },
+  { value: 'lifetime', label: 'Lifetime' },
+]
 
 function FormRegister() {
-  const [email, setEmail] = useState("");
-  const [plan, setPlan] = useState(PLANS[0].value);
+  const [email, setEmail] = useState('')
+  const [plan, setPlan] = useState(PLANS[0].value)
 
-  const doSubmit = e => {
+  const doSubmit = (e) => {
     e.preventDefault()
     const input = { plan, email }
     console.log(input)
@@ -29,7 +33,7 @@ function FormRegister() {
           name="email"
           placeholder="kcjpop@ehkoo.com"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
       </label>
@@ -44,7 +48,7 @@ function FormRegister() {
               id={item.value}
               name="plan"
               value={item.value}
-              onChange={e => setPlan(e.target.value)}
+              onChange={(e) => setPlan(e.target.value)}
               checked={item.value === plan}
             />
             {item.label}
@@ -54,7 +58,7 @@ function FormRegister() {
 
       <button type="submit">Register</button>
     </form>
-  );
+  )
 }
 ```
 
@@ -65,7 +69,7 @@ function FormRegister() {
 Thuộc tính [HTMLFormElement.elements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements) trả về một tập hợp các điều khiển (controls) trong form. Những điều khiển này bao gồm các thẻ `<button>`, `<fieldset>`, `<input>`, `<object>`, `<output>`, `<select>`, và `<textarea>`. Một ngoại lệ là thẻ `<input type="image">` không tính nhe, vì lý do lịch sử 🤷‍♂️. Bạn có thể truy xuất đến một điều khiển thông qua `name` hay `id` của nó. Như trong form ở trên.
 
 ```js
-const doSubmit = e => {
+const doSubmit = (e) => {
   e.preventDefault()
   const plan = e.target.elements.plan.value
   const email = e.target.elements.email.value
@@ -75,7 +79,7 @@ const doSubmit = e => {
 
 Các controls cũng có thể được truy xuất thông qua thứ tự nó xuất hiện trong form. Trích dẫn từ MDN.
 
-> The form controls in the returned collection are in the same order in which they appear in the form by following a preorder, depth-first traversal of the tree. This is called **tree order**. 
+> The form controls in the returned collection are in the same order in which they appear in the form by following a preorder, depth-first traversal of the tree. This is called **tree order**.
 
 Khi thay đổi vị trí của một control thì thứ tự cũng có thể thay đổi. Do đó sử dụng `name` hay `id` vẫn là chắc ăn nhất.
 
@@ -84,7 +88,7 @@ Khi thay đổi vị trí của một control thì thứ tự cũng có thể th
 Nếu bạn muốn "một phát ăn luôn", gom hết tất cả giá trị trong form thì sao nè? Chúng ta có thể dùng `FormData`.
 
 ```js
-const doSubmit = e => {
+const doSubmit = (e) => {
   e.preventDefault()
   const data = new FormData(e.target)
   const input = Object.fromEntries(data.entries())
@@ -98,8 +102,7 @@ Code sau khi sửa lại.
 
 ```jsx
 function FormRegister() {
-
-  const doSubmit = e => {
+  const doSubmit = (e) => {
     e.preventDefault()
     const input = Object.fromEntries(new FormData(e.target).entries())
     console.log(input)
@@ -122,12 +125,7 @@ function FormRegister() {
         <legend>Membership plan*</legend>
         {PLANS.map((item) => (
           <label htmlFor={item.value} key={item.label}>
-            <input
-              required
-              type="radio"
-              id={item.value}
-              name="plan"
-            />
+            <input required type="radio" id={item.value} name="plan" />
             {item.label}
           </label>
         ))}
@@ -135,8 +133,8 @@ function FormRegister() {
 
       <button type="submit">Register</button>
     </form>
-  );
+  )
 }
 ```
 
-**🚨 LƯU Ý:** Dùng `form.elements` hay `FormData` rất tiện nếu bạn chỉ muốn thu thập dữ liệu người dùng nhập vào và chuyển qua nơi khác xử lý. Nếu muốn làm những thao tác phức tạp hơn, có lẽ bạn nên dùng `react-hook-form`  hoặc `formik`.
+**🚨 LƯU Ý:** Dùng `form.elements` hay `FormData` rất tiện nếu bạn chỉ muốn thu thập dữ liệu người dùng nhập vào và chuyển qua nơi khác xử lý. Nếu muốn làm những thao tác phức tạp hơn, có lẽ bạn nên dùng `react-hook-form` hoặc `formik`.
