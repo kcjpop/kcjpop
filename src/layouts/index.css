@@ -3,4 +3,6 @@
 body {
   padding: var(--size-2);
   display: grid;
+  gap: var(--size-2);
+  align-content: flex-start;
 }
