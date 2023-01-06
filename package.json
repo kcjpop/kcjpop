@@ -1,50 +1,30 @@
 {
   "name": "ancaois.me",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "My personal page",
-  "watch": {
-    "build:dev": {
-      "patterns": [
-        "src/**/*",
-        "layouts/**/*"
-      ],
-      "extensions": "md,css,html,js,json,njk"
-    }
-  },
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "eslint": "^4.8.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.2.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "http-server": "^0.10.0",
-    "jstransformer-nunjucks": "^0.5.0",
-    "jstransformer-nunjucks-node": "^0.6.7",
-    "metalsmith": "^2.1.0",
-    "metalsmith-collections": "^0.9.0",
-    "metalsmith-drafts": "^0.1.0",
-    "metalsmith-feed": "^1.0.0",
-    "metalsmith-headings-identifier": "0.0.11",
-    "metalsmith-html-minifier": "^3.0.0",
-    "metalsmith-layouts": "^2.2.0",
-    "metalsmith-markdown-remarkable": "^0.1.1",
-    "metalsmith-serve": "0.0.7",
-    "metalsmith-static": "0.0.5",
-    "metalsmith-word-count": "0.0.4",
-    "npm-watch": "^0.3.0",
-    "nunjucks": "3.1.7",
-    "rimraf": "^2.6.2"
-  },
-  "scripts": {
-    "build": "rimraf dist/* -rf && node metalsmith.js",
-    "build:dev": "node metalsmith.js",
-    "watch": "npm-watch build:dev",
-    "serve": "http-server dist/ -s",
-    "start": "concurrently npm:watch npm:serve"
-  },
+  "type": "module",
   "author": "An Cao",
   "license": "MPL-2.0",
-  "homepage": "https://ancaois.me"
+  "homepage": "https://ancaois.me",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "open-props": "1.5.3"
+  },
+  "devDependencies": {
+    "astro": "1.9.1",
+    "autoprefixer": "10.4.13",
+    "postcss": "8.4.20",
+    "postcss-calc": "8.2.4",
+    "postcss-custom-media": "9.0.1",
+    "postcss-each": "1.1.0",
+    "postcss-import": "15.1.0",
+    "postcss-jit-props": "1.0.8",
+    "postcss-nested": "6.0.0"
+  }
 }

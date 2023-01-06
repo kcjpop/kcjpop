@@ -1,0 +1,5 @@
+@import 'open-props/normalize.min.css';
+
+body {
+  padding: var(--size-2);
+}
