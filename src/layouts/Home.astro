@@ -2,6 +2,11 @@
 import Base from './Base.astro'
 
 const notes = await Astro.glob('../pages/notes/*.md')
+notes.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date ?? 2429913600000).valueOf(), // In the year of 2047
+)
 ---
 
 <Base>
