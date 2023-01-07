@@ -4,6 +4,7 @@ specifiers:
   astro: 1.9.1
   open-props: 1.5.3
   postcss: 8.4.20
+  postcss-jit-props: 1.0.9
   postcss-preset-env: 7.8.3
   rehype-external-links: 2.0.1
 
@@ -14,6 +15,7 @@ dependencies:
 devDependencies:
   astro: 1.9.1
   postcss: 8.4.20
+  postcss-jit-props: 1.0.9_postcss@8.4.20
   postcss-preset-env: 7.8.3_postcss@8.4.20
 
 packages:
@@ -2922,6 +2924,16 @@ packages:
       postcss: ^8.0.0
     dependencies:
       postcss: 8.4.20
+    dev: true
+
+  /postcss-jit-props/1.0.9_postcss@8.4.20:
+    resolution: {integrity: sha512-sMAo7eVF480LnEGG7G0uS+4L0wRZoXiLthxJePUqo4gHrzu17hU5obAdiscjp/aZag9TqokU6dpI1zHyDGxslA==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.2.8
+    dependencies:
+      postcss: 8.4.20
+      tiny-glob: 0.2.9
     dev: true
 
   /postcss-lab-function/4.2.1_postcss@8.4.20:

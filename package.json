@@ -20,6 +20,7 @@
   "devDependencies": {
     "astro": "1.9.1",
     "postcss": "8.4.20",
+    "postcss-jit-props": "1.0.9",
     "postcss-preset-env": "7.8.3"
   }
 }
