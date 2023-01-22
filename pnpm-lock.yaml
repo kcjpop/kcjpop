@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   astro: 1.9.2
+  fast-glob: 3.2.12
   open-props: 1.5.3
   postcss: 8.4.20
   postcss-jit-props: 1.0.9
@@ -14,6 +15,7 @@ dependencies:
 
 devDependencies:
   astro: 1.9.2
+  fast-glob: 3.2.12
   postcss: 8.4.20
   postcss-jit-props: 1.0.9_postcss@8.4.20
   postcss-preset-env: 7.8.3_postcss@8.4.20
