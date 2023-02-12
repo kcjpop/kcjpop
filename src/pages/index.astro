@@ -1,5 +1,5 @@
 ---
-import Base from './Base.astro'
+import Base from '../layouts/Base.astro'
 
 const notes = await Astro.glob('../pages/notes/*.md')
 notes.sort(
@@ -10,7 +10,19 @@ notes.sort(
 ---
 
 <Base>
-  <slot />
+  <h2>Hello, I'm Ân</h2>
+  <p>I'm a web developer living in Finland.</p>
+
+  <h2>Find me on</h2>
+  <ul>
+    <li>👨‍💻 <a rel="me" href="https://github.com/kcjpop">Github</a></li>
+    <li>
+      🥷 <a rel="me" href="https://www.codewars.com/users/kcjpop">Codewars</a>
+    </li>
+    <li>
+      🐘 <a rel="me" href="https://toot.cafe/@kcjpop">@kcjpop@toot.cafe</a>
+    </li>
+  </ul>
 
   <h2>Notes</h2>
   <ul>
