@@ -18,7 +18,7 @@
     "rehype-external-links": "2.0.1"
   },
   "devDependencies": {
-    "astro": "2.0.10",
+    "astro": "2.0.15",
     "fast-glob": "3.2.12",
     "postcss": "8.4.20",
     "postcss-jit-props": "1.0.9",
