@@ -47,10 +47,13 @@
 
 :where(code, kbd, samp, pre) {
   font-family: var(--font-mono);
-  font-size: var(--font-size-1);
+  font-size: 0.9rem;
+  font-variant-ligatures: none;
 }
 
 :where(:not(pre) > code) {
+  font-size: 0.9rem;
+  font-variant-ligatures: none;
   padding-inline: var(--size-1);
   background: var(--surface-2);
   border-radius: var(--radius-2);
