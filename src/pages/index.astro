@@ -2,38 +2,57 @@
 import Base from '../layouts/Base.astro'
 
 const notes = await Astro.glob('../pages/notes/*.md')
+
+// Show notes having date first
 notes.sort(
   (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date ?? 2429913600000).valueOf(), // In the year of 2047
+    new Date(b.frontmatter.date ?? 0).valueOf() -
+    new Date(a.frontmatter.date ?? 0).valueOf(),
 )
+
+const fmtDate = (d) =>
+  [
+    d.getFullYear(),
+    String(d.getMonth() + 1).padStart(2, '0'),
+    String(d.getDate()).padStart(2, '0'),
+  ].join('-')
 ---
 
 <Base>
-  <h2>Hello, I'm Ân</h2>
-  <p>I'm a web developer living in Finland.</p>
+  <main class="content">
+    <h2>Hello, I'm Ân.</h2>
+    <p>I'm a web developer living in Finland.</p>
 
-  <h2>Find me on</h2>
-  <ul>
-    <li>👨‍💻 <a rel="me" href="https://github.com/kcjpop">Github</a></li>
-    <li>
-      🥷 <a rel="me" href="https://www.codewars.com/users/kcjpop">Codewars</a>
-    </li>
-    <li>
-      🐘 <a rel="me" href="https://toot.cafe/@kcjpop">@kcjpop@toot.cafe</a>
-    </li>
-  </ul>
+    <h2>Find me on</h2>
+    <ul>
+      <li>👨‍💻 <a rel="me" href="https://github.com/kcjpop">Github</a></li>
+      <li>
+        🥷 <a rel="me" href="https://www.codewars.com/users/kcjpop">Codewars</a>
+      </li>
+      <li>
+        🐘 <a rel="me" href="https://toot.cafe/@kcjpop">@kcjpop@toot.cafe</a>
+      </li>
+    </ul>
 
-  <h2>Notes</h2>
-  <ul>
-    {
-      notes.map((note) => (
-        <li>
-          <a href={note.url}>
-            {note.file.substring(note.file.lastIndexOf('/'))}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+    <h2>Notes</h2>
+    <ul>
+      {
+        notes.map((note) => (
+          <li>
+            <div style="display: flex; justify-content: space-between;">
+              <a href={note.url}>
+                {note.file.substring(note.file.lastIndexOf('/'))}
+              </a>
+
+              <span>
+                {note.frontmatter.date
+                  ? fmtDate(new Date(note.frontmatter.date))
+                  : ''}
+              </span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </Base>

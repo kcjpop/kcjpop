@@ -1,0 +1,57 @@
+/* Based on
+  https://github.com/argyleink/open-props/blob/ed5a83da2f497a180b296b1eed4ca3259db82e5f/src/extra/normalize.src.css
+  and
+  https://andy-bell.co.uk/a-modern-css-reset/
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:where(html) {
+  block-size: 100%;
+  font-family: var(--font-sans);
+  line-height: var(--font-lineheight-3);
+  -webkit-text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+
+  @media (--motionOK) {
+    scroll-behavior: smooth;
+  }
+}
+
+:where(body, h1, h2, h3, h4, p, figure, blockquote, ol, ul, dl, dd) {
+  margin: 0;
+}
+
+:where(body) {
+  min-block-size: 100svh;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  line-height: var(--font-lineheight-1);
+}
+
+:where(p, ul, ol, dl, h6) {
+  font-size: var(--font-size-2);
+}
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: block;
+}
+
+:where(a:not([class])) {
+  text-decoration-skip-ink: auto;
+}
+
+:where(code, kbd, samp, pre) {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+}
+
+:where(:not(pre) > code) {
+  padding-inline: var(--size-1);
+  background: var(--surface-2);
+  border-radius: var(--radius-2);
+}
