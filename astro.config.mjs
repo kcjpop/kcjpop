@@ -8,7 +8,7 @@ import { flix } from './shiki/flix.js'
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      theme: 'rose-pine-dawn',
+      theme: 'github-light',
       langs: [zig, flix],
     },
     rehypePlugins: [rehypeExternalLinks],

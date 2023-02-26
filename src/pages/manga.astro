@@ -3,111 +3,146 @@ import Base from '../layouts/Base.astro'
 import manga from '../../manga.json'
 
 const covers = [
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397269/kcjpop/e539457f-0527-44c6-94e9-8e5683926d64.png',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397227/kcjpop/bf5a283f-28c9-4654-b81f-c426a17583b6.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397224/kcjpop/f31e3f77-518e-481b-97aa-a5a5cf137fcd.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397223/kcjpop/e91826a2-52fd-45e8-b4cd-c83f32f1330f.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397223/kcjpop/ed5f6f85-d2fd-42ab-b675-e51ca470ec38.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397223/kcjpop/e324f24b-d6fe-42a8-bc95-80ea23113807.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397222/kcjpop/ca3be57e-a718-4a16-948f-664b3b10a457.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397221/kcjpop/d524408f-28ae-4a72-8c0e-e9a1929546c3.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397220/kcjpop/d4bc9f12-335a-4677-866a-bc21d3ae8330.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397220/kcjpop/deac51eb-81d0-46bd-91c0-f3635d176434.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397220/kcjpop/d8f22692-3824-441c-86b6-08c39fa2c846.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397216/kcjpop/ca01a9d2-d1a4-4872-884a-fa78fe5d20a1.png',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397216/kcjpop/d750f15d-7310-43ca-a711-ad059b720e23.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397215/kcjpop/c909f85e-576e-47ab-907f-ec32dad6c37b.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397214/kcjpop/c7fc8a8b-5c13-41e1-bf2b-220024f91c67.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397214/kcjpop/c7642acb-632f-4aa4-b255-b654d1f368cb.png',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397213/kcjpop/a7d6f649-4cdc-4529-b428-201c26e150e9.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397213/kcjpop/5237633b-240d-40ed-bb70-8d352ed6dc39.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397212/kcjpop/c774e918-6bd7-43e8-944a-3f2ea4c6e628.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397211/kcjpop/c6a0544c-c435-449f-b493-61a2e8cbb3db.png',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397210/kcjpop/a51a9904-2c09-4c5b-a364-2155e74841bc.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397210/kcjpop/ac8cdd48-bbfc-45dd-b864-7c3d22e2fa9d.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397208/kcjpop/5648987a-cf86-4e2f-84e5-d400eba71c29.png',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397208/kcjpop/56970309-a97c-475d-9a7f-37b26c09dbdf.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397208/kcjpop/73733e31-2cb1-4d10-a4ca-ff7e6fbbfb01.png',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397208/kcjpop/45801175-4f08-4e86-83fe-6609f0da0138.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397207/kcjpop/cc99f9a8-0273-4cf1-bafc-6b718a9407d8.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397207/kcjpop/783194c9-c5c4-47de-8903-1443ce8348fc.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397206/kcjpop/03046074-ad14-4ff4-9b1f-b5bc68819802.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397205/kcjpop/892c3d82-14a6-4216-ad15-196fbc55a22b.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397205/kcjpop/17631f21-436b-4be6-9f7f-8a5e3e1477f7.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397203/kcjpop/6089a401-8062-48d7-bb93-dc6e2a377d63.png',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397203/kcjpop/6089c0f6-dada-4602-aae7-a040f304ee90.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397201/kcjpop/404ebcb9-c0f2-4ed1-b24d-74b118e24cdb.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397198/kcjpop/f5de6a75-c04c-4db0-94b6-a8e943c95704.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397198/kcjpop/e5f25547-6b8a-4894-a2f6-d8b3597f38ec.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397198/kcjpop/5277fe57-8f84-43d7-b87b-9be0e4e71042.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397197/kcjpop/1620a81b-1b2b-4f82-8fa6-0e5a3a744f96.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397196/kcjpop/427bda46-d39c-4947-bc39-3ddddbafdeb7.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397196/kcjpop/0476d945-439f-41d6-8837-78e461064f24.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397195/kcjpop/fa3ef89d-adbe-4efe-8ea1-5ef9d5220a55.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397194/kcjpop/204cdd52-d968-47ce-8024-4349fea4a819.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397192/kcjpop/f00eaee4-d418-4c9b-92f6-c5dcc2c85a4c.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397192/kcjpop/45d80b8e-5041-403b-9bd7-14cff635cfb5.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397191/kcjpop/e8cdb2b4-8bfe-4a6b-b5a7-8ca7388a8ac3.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397191/kcjpop/b3a740cd-b0dc-4c6a-aa99-5b494a729036.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397190/kcjpop/c6bcf379-8d11-42c3-9c08-5991d4b9ea8c.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397189/kcjpop/91a427f0-1ad9-47fb-8228-17827ca7e20b.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397189/kcjpop/35d5cc8f-b5af-4d36-bd39-1d260ab604f1.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397187/kcjpop/29fe4cad-15d3-4bb9-8807-5670a7d935b0.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397187/kcjpop/878d7af4-f6d0-4971-9135-643cb26362a2.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397187/kcjpop/a1f565fb-aa15-4bcf-bb6b-c26fb8d8667a.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397187/kcjpop/2d4a4ce0-33bb-42ed-8ec4-8c9af14fb10e.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397185/kcjpop/6085fe5f-6347-4281-9a38-ab7316a2e8ce.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397185/kcjpop/a7ff35d8-4d74-41c4-b145-6929ca00767c.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397185/kcjpop/81733f3f-fdf7-42ad-9ab7-cfdd0be76e88.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397183/kcjpop/8d502c74-3876-40bb-9e54-1e996dbea026.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397183/kcjpop/24cf7637-66fd-4c35-9a0d-be3d66922e67.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397182/kcjpop/7d6fc36c-92ed-404b-9f98-76eb1af77375.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397182/kcjpop/5d166fab-ea4a-4127-bd90-b0cfc123448f.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397181/kcjpop/2366b24c-fcb4-459d-9eec-ef43aa708c58.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397180/kcjpop/81b8ebb9-dcb4-4869-9533-45e9e3cc42f4.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397180/kcjpop/5f43bfed-0568-43cc-9731-9578531778df.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397180/kcjpop/82ed4292-97b4-425c-b54e-6c2676c7f85f.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397179/kcjpop/4f25798b-c276-4358-907d-8ee22b26977a.jpg',
-  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_256/v1674397178/kcjpop/2ee1c44b-44f5-4fee-b511-dc90a5f48487.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397269/kcjpop/e539457f-0527-44c6-94e9-8e5683926d64.png',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397227/kcjpop/bf5a283f-28c9-4654-b81f-c426a17583b6.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397224/kcjpop/f31e3f77-518e-481b-97aa-a5a5cf137fcd.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397223/kcjpop/e91826a2-52fd-45e8-b4cd-c83f32f1330f.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397223/kcjpop/ed5f6f85-d2fd-42ab-b675-e51ca470ec38.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397223/kcjpop/e324f24b-d6fe-42a8-bc95-80ea23113807.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397222/kcjpop/ca3be57e-a718-4a16-948f-664b3b10a457.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397221/kcjpop/d524408f-28ae-4a72-8c0e-e9a1929546c3.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397220/kcjpop/d4bc9f12-335a-4677-866a-bc21d3ae8330.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397220/kcjpop/deac51eb-81d0-46bd-91c0-f3635d176434.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397220/kcjpop/d8f22692-3824-441c-86b6-08c39fa2c846.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397216/kcjpop/ca01a9d2-d1a4-4872-884a-fa78fe5d20a1.png',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397216/kcjpop/d750f15d-7310-43ca-a711-ad059b720e23.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397215/kcjpop/c909f85e-576e-47ab-907f-ec32dad6c37b.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397214/kcjpop/c7fc8a8b-5c13-41e1-bf2b-220024f91c67.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397214/kcjpop/c7642acb-632f-4aa4-b255-b654d1f368cb.png',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397213/kcjpop/a7d6f649-4cdc-4529-b428-201c26e150e9.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397213/kcjpop/5237633b-240d-40ed-bb70-8d352ed6dc39.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397212/kcjpop/c774e918-6bd7-43e8-944a-3f2ea4c6e628.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397211/kcjpop/c6a0544c-c435-449f-b493-61a2e8cbb3db.png',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397210/kcjpop/a51a9904-2c09-4c5b-a364-2155e74841bc.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397210/kcjpop/ac8cdd48-bbfc-45dd-b864-7c3d22e2fa9d.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397208/kcjpop/5648987a-cf86-4e2f-84e5-d400eba71c29.png',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397208/kcjpop/56970309-a97c-475d-9a7f-37b26c09dbdf.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397208/kcjpop/73733e31-2cb1-4d10-a4ca-ff7e6fbbfb01.png',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397208/kcjpop/45801175-4f08-4e86-83fe-6609f0da0138.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397207/kcjpop/cc99f9a8-0273-4cf1-bafc-6b718a9407d8.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397207/kcjpop/783194c9-c5c4-47de-8903-1443ce8348fc.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397206/kcjpop/03046074-ad14-4ff4-9b1f-b5bc68819802.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397205/kcjpop/892c3d82-14a6-4216-ad15-196fbc55a22b.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397205/kcjpop/17631f21-436b-4be6-9f7f-8a5e3e1477f7.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397203/kcjpop/6089a401-8062-48d7-bb93-dc6e2a377d63.png',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397203/kcjpop/6089c0f6-dada-4602-aae7-a040f304ee90.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397201/kcjpop/404ebcb9-c0f2-4ed1-b24d-74b118e24cdb.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397198/kcjpop/f5de6a75-c04c-4db0-94b6-a8e943c95704.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397198/kcjpop/e5f25547-6b8a-4894-a2f6-d8b3597f38ec.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397198/kcjpop/5277fe57-8f84-43d7-b87b-9be0e4e71042.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397197/kcjpop/1620a81b-1b2b-4f82-8fa6-0e5a3a744f96.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397196/kcjpop/427bda46-d39c-4947-bc39-3ddddbafdeb7.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397196/kcjpop/0476d945-439f-41d6-8837-78e461064f24.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397195/kcjpop/fa3ef89d-adbe-4efe-8ea1-5ef9d5220a55.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397194/kcjpop/204cdd52-d968-47ce-8024-4349fea4a819.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397192/kcjpop/f00eaee4-d418-4c9b-92f6-c5dcc2c85a4c.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397192/kcjpop/45d80b8e-5041-403b-9bd7-14cff635cfb5.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397191/kcjpop/e8cdb2b4-8bfe-4a6b-b5a7-8ca7388a8ac3.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397191/kcjpop/b3a740cd-b0dc-4c6a-aa99-5b494a729036.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397190/kcjpop/c6bcf379-8d11-42c3-9c08-5991d4b9ea8c.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397189/kcjpop/91a427f0-1ad9-47fb-8228-17827ca7e20b.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397189/kcjpop/35d5cc8f-b5af-4d36-bd39-1d260ab604f1.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397187/kcjpop/29fe4cad-15d3-4bb9-8807-5670a7d935b0.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397187/kcjpop/878d7af4-f6d0-4971-9135-643cb26362a2.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397187/kcjpop/a1f565fb-aa15-4bcf-bb6b-c26fb8d8667a.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397187/kcjpop/2d4a4ce0-33bb-42ed-8ec4-8c9af14fb10e.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397185/kcjpop/6085fe5f-6347-4281-9a38-ab7316a2e8ce.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397185/kcjpop/a7ff35d8-4d74-41c4-b145-6929ca00767c.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397185/kcjpop/81733f3f-fdf7-42ad-9ab7-cfdd0be76e88.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397183/kcjpop/8d502c74-3876-40bb-9e54-1e996dbea026.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397183/kcjpop/24cf7637-66fd-4c35-9a0d-be3d66922e67.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397182/kcjpop/7d6fc36c-92ed-404b-9f98-76eb1af77375.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397182/kcjpop/5d166fab-ea4a-4127-bd90-b0cfc123448f.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397181/kcjpop/2366b24c-fcb4-459d-9eec-ef43aa708c58.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397180/kcjpop/81b8ebb9-dcb4-4869-9533-45e9e3cc42f4.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397180/kcjpop/5f43bfed-0568-43cc-9731-9578531778df.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397180/kcjpop/82ed4292-97b4-425c-b54e-6c2676c7f85f.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397179/kcjpop/4f25798b-c276-4358-907d-8ee22b26977a.jpg',
+  'https://res.cloudinary.com/duqeezi8j/image/upload/f_auto,w_200/v1674397178/kcjpop/2ee1c44b-44f5-4fee-b511-dc90a5f48487.jpg',
 ]
 ---
 
 <style>
-  article {
+  .main {
+    padding: var(--size-3);
+  }
+  .all {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
+    gap: var(--size-3);
+  }
+
+  .title {
     display: grid;
     align-items: center;
     grid-template-columns: 100px auto;
     gap: var(--size-3);
-    background: var(--gray-1);
+    background: var(--surface-2);
+  }
+
+  .genres {
+    font-size: var(--font-size-1);
+  }
+
+  .intro {
+    max-inline-size: var(--size-content-3);
   }
 </style>
 
 <Base>
-  <h1>Manga</h1>
-  <p>Something I have been reading for years, on and off.</p>
+  <main class="main flow">
+    <div class="flex align-center gap-3">
+      <h1>Manga</h1>
+      <a href="/">Return home</a>
+    </div>
+    <p class="intro">
+      I have always been enjoy reading manga since I was 8. This page is for
+      tracking which titles I have read so far. Some may contain notes to remind
+      me what is going on in the story, in case that title hasn't finished yet.
+    </p>
 
-  {
-    manga.map((m) => {
-      const coverArt = m.relationships.find((r) => r.type === 'cover_art')
-      const cover = covers.find((c) => c.endsWith(coverArt.attributes.fileName))
+    <div class="all">
+      {
+        manga.map((m) => {
+          const coverArt = m.relationships.find((r) => r.type === 'cover_art')
+          const cover = covers.find((c) =>
+            c.endsWith(coverArt.attributes.fileName),
+          )
 
-      return (
-        <article>
-          <img src={cover} alt="" decoding="async" loading="lazy" />
+          return (
+            <article class="title">
+              <img
+                src={cover}
+                alt={m.attributes.title?.en}
+                loading="lazy"
+                decoding="async"
+                style="object-fit: cover; width: 100%;"
+              />
 
-          <div>
-            <h3>{m.attributes.title?.en}</h3>
+              <div>
+                <h3>{m.attributes.title?.en}</h3>
 
-            <p>
-              Tags:{' '}
-              {m.attributes.tags
-                ?.map((t) => t.attributes.name?.en)
-                .filter(Boolean)
-                .join(', ')}
-            </p>
-          </div>
-        </article>
-      )
-    })
-  }
+                <p class="genres">
+                  {m.attributes.tags
+                    ?.map((t) => t.attributes.name?.en)
+                    .filter(Boolean)
+                    .join(', ')}
+                </p>
+              </div>
+            </article>
+          )
+        })
+      }
+    </div>
+  </main>
 </Base>

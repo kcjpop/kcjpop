@@ -41,12 +41,35 @@ body {
   color: var(--text-1);
 }
 
-.content {
+.nav {
+  max-inline-size: var(--size-content-3);
+  margin-inline: auto;
+}
+
+.container {
   padding: var(--size-3);
   max-inline-size: var(--size-content-3);
   margin-inline: auto;
 }
 
-.content > * + * {
+.flow > * + * {
   margin-block-start: 1.5rem;
+}
+
+/* Utilities */
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-3 {
+  gap: var(--size-3);
+}
+
+.align-center {
+  align-items: center;
 }
