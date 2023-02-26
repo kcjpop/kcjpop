@@ -19,18 +19,45 @@ const fmtDate = (d) =>
 ---
 
 <Base>
+  <style>
+    .social li::marker {
+      content: attr(data-emoji) ' ';
+    }
+
+    .note {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+      justify-content: space-between;
+    }
+  </style>
   <main class="content">
     <h2>Hello, I'm Ân.</h2>
     <p>I'm a web developer living in Finland.</p>
 
     <h2>Find me on</h2>
-    <ul>
-      <li>👨‍💻 <a rel="me" href="https://github.com/kcjpop">Github</a></li>
-      <li>
-        🥷 <a rel="me" href="https://www.codewars.com/users/kcjpop">Codewars</a>
+    <ul class="social">
+      <li data-emoji="👨‍💻">
+        <a
+          rel="me"
+          href="https://github.com/kcjpop"
+          title="See my programming projects on Github">Github</a
+        >
       </li>
-      <li>
-        🐘 <a rel="me" href="https://toot.cafe/@kcjpop">@kcjpop@toot.cafe</a>
+      <li data-emoji="🥷">
+        <a
+          rel="me"
+          href="https://www.codewars.com/users/kcjpop"
+          title="Sometimes I practice various programming puzzles in different languages on Codewars."
+          >Codewars</a
+        >
+      </li>
+      <li data-emoji="🐘">
+        <a
+          rel="me"
+          href="https://toot.cafe/@kcjpop"
+          title="After Musk took over Twitter and destroyed the platform, I migrated to Mastodon."
+          >@kcjpop@toot.cafe</a
+        >
       </li>
     </ul>
 
@@ -39,16 +66,16 @@ const fmtDate = (d) =>
       {
         notes.map((note) => (
           <li>
-            <div style="display: flex; justify-content: space-between;">
+            <div class="note">
               <a href={note.url}>
                 {note.file.substring(note.file.lastIndexOf('/'))}
               </a>
 
-              <span>
-                {note.frontmatter.date
-                  ? fmtDate(new Date(note.frontmatter.date))
-                  : ''}
-              </span>
+              {note.frontmatter.date ? (
+                <time datetime={note.frontmatter.date}>
+                  {fmtDate(new Date(note.frontmatter.date))}
+                </time>
+              ) : null}
             </div>
           </li>
         ))
