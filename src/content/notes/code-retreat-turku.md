@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: 'Code Retreat in Turku  —  A Nice Experience'
 date: 2018-11-17
 ---

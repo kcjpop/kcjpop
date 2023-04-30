@@ -1,13 +1,13 @@
 ---
-import Base from '../layouts/Base.astro'
+import { getCollection } from 'astro:content'
 
-const notes = await Astro.glob('../pages/notes/*.md')
+import Base from '../layouts/Base.astro'
+const notes = await getCollection('notes')
 
 // Show notes having date first
 notes.sort(
   (a, b) =>
-    new Date(b.frontmatter.date ?? 0).valueOf() -
-    new Date(a.frontmatter.date ?? 0).valueOf(),
+    new Date(b.data.date ?? 0).valueOf() - new Date(a.data.date ?? 0).valueOf(),
 )
 
 const fmtDate = (d) =>
@@ -73,13 +73,11 @@ const fmtDate = (d) =>
         notes.map((note) => (
           <li>
             <div class="note">
-              <a href={note.url}>
-                {note.file.substring(note.file.lastIndexOf('/'))}
-              </a>
+              <a href={`/notes/${note.slug}`}>{note.id}</a>
 
-              {note.frontmatter.date ? (
-                <time datetime={note.frontmatter.date}>
-                  {fmtDate(new Date(note.frontmatter.date))}
+              {note.data.date ? (
+                <time datetime={note.data.date}>
+                  {fmtDate(new Date(note.data.date))}
                 </time>
               ) : null}
             </div>

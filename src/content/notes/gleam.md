@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 date: 2023-02-26
 ---
 

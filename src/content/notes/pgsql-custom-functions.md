@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 ---
 
 # Writing custom functions in PostgreSQL: A beginner guide

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: 'Books I should read'
 date: 2023-01-22
 ---
