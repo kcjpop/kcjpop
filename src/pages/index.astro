@@ -29,6 +29,10 @@ const fmtDate = (d) =>
       grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
       justify-content: space-between;
     }
+
+    .notes {
+      padding-inline-start: 1em;
+    }
   </style>
   <main class="container flow">
     <h2>Hello, I'm Ân.</h2>
@@ -68,7 +72,7 @@ const fmtDate = (d) =>
     </ul>
 
     <h2>Notes</h2>
-    <ul>
+    <ul class="notes">
       {
         notes.map((note) => (
           <li>
