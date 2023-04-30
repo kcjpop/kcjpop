@@ -53,6 +53,17 @@ body {
   padding: var(--size-3);
   max-inline-size: var(--size-content-3);
   margin-inline: auto;
+
+  :is(blockquote) {
+    border-inline-start: var(--size-2) solid var(--text-2);
+    padding: var(--size-2) var(--size-2) var(--size-2) var(--size-3);
+    background-color: var(--surface-2);
+  }
+
+  :is(img),
+  :is(video) {
+    max-width: 100%;
+  }
 }
 
 .flow > * + * {
