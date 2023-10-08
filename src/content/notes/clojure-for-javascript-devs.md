@@ -1,6 +1,7 @@
 ---
 date: 2023-04-29
 title: 'Clojure for JavaScript developers: Building a web app'
+draft: true
 ---
 
 Clojure (and LISP in general) has caught my interest since 2016 but I wasn't motivated enough to dive deep into it and build a full-fledged application. That's especially a shame as the project I'm currently in has a Clojure backend. So well, here is my guide to learn Clojure by building a traditional, multi-page web app.

@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import Base from '../layouts/Base.astro'
-const notes = await getCollection('notes')
+const notes = await getCollection('notes', ({ data }) => data.draft !== true)
 
 // Show notes having date first
 notes.sort(

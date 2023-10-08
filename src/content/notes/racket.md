@@ -1,5 +1,6 @@
 ---
 date: 2023-03-18
+draft: true
 ---
 
 A LISP to write system apps, why not?

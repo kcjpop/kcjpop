@@ -3,7 +3,7 @@ import { getCollection, getEntryBySlug } from 'astro:content'
 import Post from '../../layouts/Post.astro'
 
 export async function getStaticPaths() {
-  const notes = await getCollection('notes')
+  const notes = await getCollection('notes', ({ data }) => data.draft !== true)
 
   return notes.map((note) => ({
     params: { slug: note.slug },

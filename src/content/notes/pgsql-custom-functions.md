@@ -1,4 +1,5 @@
 ---
+draft: true
 ---
 
 # Writing custom functions in PostgreSQL: A beginner guide
