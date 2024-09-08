@@ -6,6 +6,14 @@ _Keep track of manga I recently discovered and what the current story so far._
 
 ## 2024
 
+### Tsureneko: Maruru to Hachi
+
+- Art: 5/5
+- Story: 4/5
+- Status: on-going
+
+A nice, heart-warming story about a lost cat named Maruru and a stray cat named Hachi.
+
 ### Yuube wa Otanoshimi Deshita ne
 
 - Art: 4/5
