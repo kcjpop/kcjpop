@@ -26,9 +26,10 @@ const fmtDate = (d) =>
 
     .note {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
+      grid-template-columns: max-content auto;
       gap: 1ch;
       justify-content: space-between;
+      align-items: baseline;
     }
 
     .notes {
@@ -36,11 +37,11 @@ const fmtDate = (d) =>
     }
 
     .datetime {
-      color: var(--text-2);
+      font-size: 0.9em;
     }
   </style>
   <main class="container flow">
-    <h2>Hello, I'm Ân.</h2>
+    <h1>Hello, I'm Ân.</h1>
     <p>I'm a web developer living in Finland.</p>
 
     <p>

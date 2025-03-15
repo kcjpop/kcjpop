@@ -3,28 +3,28 @@
 :where(html) {
   color-scheme: light;
 
-  --link: var(--indigo-7);
-  --link-visited: var(--purple-7);
+  --link: var(--yellow-10);
+  --link-visited: var(--sand-8);
 
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-7);
+  --text-1: var(--stone-10);
+  --text-2: var(--stone-7);
 
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
+  --surface-1: var(--stone-0);
+  --surface-2: var(--stone-2);
 }
 
-@media (--OSdark) {
+@media (prefers-color-scheme: dark) {
   :where(html) {
     color-scheme: dark;
 
-    --link: var(--indigo-3);
-    --link-visited: var(--purple-3);
+    --link: var(--jungle-3);
+    --link-visited: var(--sand-2);
 
-    --text-1: var(--gray-1);
-    --text-2: var(--gray-4);
+    --text-1: var(--stone-1);
+    --text-2: var(--stone-4);
 
-    --surface-1: var(--gray-9);
-    --surface-2: var(--gray-8);
+    --surface-1: var(--stone-10);
+    --surface-2: var(--stone-8);
   }
 }
 
@@ -43,6 +43,24 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--surface-1);
   color: var(--text-1);
+}
+
+:where(a) {
+  color: var(--link);
+
+  &:link {
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: var(--link-visited);
+  }
+
+  &:hover {
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1.5px;
+  }
 }
 
 .nav {
