@@ -1,26 +1,31 @@
 @font-face {
-  font-family: 'Sen';
-  src: url('./Sen-Regular.woff2') format('woff2'),
-    url('./Sen-Regular.woff') format('woff');
+  font-family: 'Uncut Sans Variable';
+  src: url('./UncutSans-Variable.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Sen';
-  src: url('./Sen-Bold.woff2') format('woff2'),
-    url('./Sen-Bold.woff') format('woff');
-  font-weight: 700;
+  font-family: 'Uncut Sans Variable';
+  src: url('./UncutSans-Variable.woff2') format('woff2');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Sen';
-  src: url('./Sen-ExtraBold.woff2') format('woff2'),
-    url('./Sen-ExtraBold.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
+  font-family: 'Uncut Sans Variable';
+  src: url('./UncutSans-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uncut Sans Variable';
+  src: url('./UncutSans-Variable.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
   font-display: swap;
 }
