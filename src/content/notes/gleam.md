@@ -15,7 +15,7 @@ pub fn main() {
 
 stdlib
 
-```gl
+```gleam
 import gleam/string
 import gleam/list.{contains}
 

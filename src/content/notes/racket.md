@@ -7,7 +7,7 @@ A LISP to write system apps, why not?
 
 ## Hello racket
 
-```rkt
+```racket
 #lang racket
 
 ; `define` can… define a value
@@ -44,7 +44,7 @@ Boolean values are `#t` and `#f`. Anything that isn't `#f` is `#t`.
 
 ## List
 
-```rkt
+```racket
 ; define a list
 (define lst (list 1 2 3))
 
@@ -62,7 +62,7 @@ Boolean values are `#t` and `#f`. Anything that isn't `#f` is `#t`.
 
 Some operations over lists.
 
-```rkt
+```racket
 ; get length of a list
 (length lst)
 
@@ -82,7 +82,7 @@ Some operations over lists.
 
 Mapping over a list is simple.
 
-```rkt
+```racket
 (define (add-bang s)
   (string-append s "!"))
 
@@ -94,7 +94,7 @@ Mapping over a list is simple.
 
 There are `andmap` and `ormap` that are very similar to `Array.prototype.every()` and `Array.prototype.some()` in JavaScript.
 
-```rkt
+```racket
 (andmap even? (list 2 4 6)) ; #t
 
 (andmap even? (list 2 4 6 1)) ; #f
@@ -106,7 +106,7 @@ And of course we have `filter`, `foldl`, `foldr`.
 
 ## A taste of recursion
 
-```rkt
+```racket
 (define (remove-dups l)
   (cond
     [(empty? l) empty]
