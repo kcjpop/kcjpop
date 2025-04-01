@@ -9,9 +9,8 @@
   "scripts": {
     "dev": "astro dev --port 6003",
     "start": "astro dev --port 6003",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "astro build && pnpm p3r build && mv pj/p3r/dist dist/p3r",
+    "p3r": "pnpm --filter p3r"
   },
   "dependencies": {
     "open-props": "1.7.13",
