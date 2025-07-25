@@ -48,10 +48,6 @@ body {
 :where(a) {
   color: var(--link);
 
-  &:link {
-    text-decoration: none;
-  }
-
   &:visited {
     color: var(--link-visited);
   }

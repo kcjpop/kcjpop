@@ -28,7 +28,6 @@ const fmtDate = (d) =>
       display: grid;
       grid-template-columns: max-content auto;
       gap: 1ch;
-      justify-content: space-between;
       align-items: baseline;
     }
 
@@ -92,7 +91,7 @@ const fmtDate = (d) =>
 
               {note.data.date ? (
                 <time datetime={note.data.date} class="datetime">
-                  {fmtDate(new Date(note.data.date))}
+                  [{fmtDate(new Date(note.data.date))}]
                 </time>
               ) : null}
             </div>
