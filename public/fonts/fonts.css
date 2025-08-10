@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Mali';
+  src: url('./Mali-Regular.woff2') format('woff2'),
+    url('./Mali-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
+  /* Unicode range for Thai
+   * https://en.wikipedia.org/wiki/Thai_(Unicode_block)?useskin=vector
+   */
+  unicode-range: U+0E00-0E7F;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./WorkSans-Regular.woff2') format('woff2'),
+    url('./WorkSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./WorkSans-Italic.woff2') format('woff2'),
+    url('./WorkSans-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
