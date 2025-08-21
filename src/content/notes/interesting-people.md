@@ -21,6 +21,12 @@ Enjoyed reading [**My favorite prime number generator**](https://eli.thegreenpla
 
 Read the article [**Purely Functional Retrogames, Part 1**](https://prog21.dadgum.com/23.html) about writing games using Erlang. His website has many interesting posts about retro gaming.
 
+### Jonathan
+
+- Website: https://jonathan-frere.com/
+
+Found their website while searching for some [Helix](https://jonathan-frere.com/posts/helix/) setup.
+
 ### Josh Kirklin
 
 - Website: https://kirklin.science/
