@@ -33,3 +33,7 @@ Found their website while searching for some [Helix](https://jonathan-frere.com/
 - Github: https://github.com/ScrambledEggsOnToast
 
 Read his article [**Writing a 2048 clone in elm**](http://scrambledeggsontoast.github.io/2014/05/09/writing-2048-elm/) when searching for examples about FRP in game programming.
+
+### Quan Tong
+
+- Website: https://quantonganh.com/
