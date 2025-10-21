@@ -1,5 +1,79 @@
 ---
 import Base from '../layouts/Base.astro'
+
+const constants = [
+  {
+    name: 'Trung',
+    desc: 'Đọc thanh ngang',
+    chars: [
+      ['ก', '/k/'],
+      ['จ', '/ch/'],
+      ['ด', '/đ/'],
+      ['ฎ', '/đ/'],
+      ['ต', '/t/'],
+      ['ฏ', '/t/'],
+      ['บ', '/b/'],
+      ['ป', '/p/'],
+      ['อ', '/o/'],
+    ],
+  },
+  {
+    name: 'Cao',
+    desc: 'Đọc thanh hỏi',
+    chars: [
+      ['ข', '/kh/'],
+      ['ฉ', "/ch'/"],
+      ['ฐ', "/th'/"],
+      ['ถ', "/th'/"],
+      ['ผ', '/p/'],
+      ['ฝ', '/ph/'],
+      ['ศ', '/x/'],
+      ['ษ', '/x/'],
+      ['ส', '/x/'],
+      ['ห', '/h/'],
+    ],
+  },
+  {
+    name: 'Thấp đôi',
+    desc: 'Đọc thanh ngang',
+    chars: [
+      ['ค', '/kh/'],
+      ['ฆ', '/kh/'],
+      ['ช', "/ch'/"],
+      ['ฌ', "/ch'/"],
+      ['ฑ', "/th'/"],
+      ['ฒ', "/th'/"],
+      ['ท', "/th'/"],
+      ['ธ', "/th'/"],
+      ['พ', "/p'/"],
+      ['ภ', "/p'/"],
+      ['ฟ', '/ph/'],
+      ['ซ', '/x/'],
+      ['ฮ', '/h/'],
+    ],
+  },
+  {
+    name: 'Thấp đơn',
+    desc: 'Đọc thanh ngang',
+    chars: [
+      ['ณ', '/n/'],
+      ['น', '/n/'],
+      ['ม', '/m/'],
+      ['ล', '/l/'],
+      ['ฬ', '/l/'],
+      ['ง', '/ng/'],
+      ['ร', '/r/'],
+      ['ว', '/w/'],
+      ['ย', '/d/'],
+      ['ญ', '/d/'],
+    ],
+  },
+]
+
+const rowNumber = Math.max(...constants.map((group) => group.chars.length))
+const items = []
+
+for (let i = 0; i < rowNumber; i++) {}
 ---
 
 <Base>
@@ -212,8 +286,7 @@ import Base from '../layouts/Base.astro'
   </article>
 
   <style>
-    [lang='th'] {
-      font-family: 'Krub', sans-serif;
+    p[lang='th'] {
       font-size: 2.5em;
     }
 
