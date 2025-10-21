@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Mali';
-  src: url('./Mali-Regular.woff2') format('woff2'),
-    url('./Mali-Regular.woff') format('woff');
+  src: url('/fonts/Mali-Regular.woff2') format('woff2'),
+    url('/fonts/Mali-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,8 +14,8 @@
 
 @font-face {
   font-family: 'Work Sans';
-  src: url('./WorkSans-Regular.woff2') format('woff2'),
-    url('./WorkSans-Regular.woff') format('woff');
+  src: url('/fonts/WorkSans-Regular.woff2') format('woff2'),
+    url('/fonts/WorkSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -23,8 +23,8 @@
 
 @font-face {
   font-family: 'Work Sans';
-  src: url('./WorkSans-Italic.woff2') format('woff2'),
-    url('./WorkSans-Italic.woff') format('woff');
+  src: url('/fonts/WorkSans-Italic.woff2') format('woff2'),
+    url('/fonts/WorkSans-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
